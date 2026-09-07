@@ -1,0 +1,28 @@
+# Datasets (auto-downloaded by torchvision on first run)
+data/
+*.tar.gz
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Experiment logs / large checkpoints
+wandb/
+runs/**/last.pt
+*.zip
+
+# LaTeX build artifacts
+report/*.aux
+report/*.log
+report/*.out
+report/*.bbl
+report/*.blg
+report/*.toc
+report/*.synctex.gz
+
+# OS
+.DS_Store

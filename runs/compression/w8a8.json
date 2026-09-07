@@ -1,0 +1,61 @@
+{
+  "config": {
+    "checkpoint": "runs/baseline/best.pt",
+    "checkpoint_epoch": 176,
+    "mixed_config": null,
+    "weight_bits": 8,
+    "activation_bits": 8,
+    "quantization": "symmetric uniform, zero-point=0",
+    "weight_granularity": "per-output-channel",
+    "activation_granularity": "per-tensor (per-layer input)",
+    "fp32_kept": "BatchNorm params/stats, biases, final logits",
+    "calibration_images": 512,
+    "num_quantized_layers": 53
+  },
+  "accuracy": {
+    "fp32_top1": null,
+    "quantized_top1": 0.9278,
+    "quantized_loss": 0.3120779746055603,
+    "top1_drop": null,
+    "per_class_top1": [
+      0.9279999732971191,
+      0.9620000123977661,
+      0.9100000262260437,
+      0.8500000238418579,
+      0.9309999942779541,
+      0.8830000162124634,
+      0.949999988079071,
+      0.9449999928474426,
+      0.9539999961853027,
+      0.9649999737739563
+    ]
+  },
+  "weight_memory": {
+    "total_param_elements": 2270794,
+    "quantized_weight_elements": 2202560,
+    "fp32_other_elements": 68234,
+    "fp32_model_size_bytes": 9083176,
+    "fp32_model_size_mb": 8.662391662597656,
+    "compressed_weight_bytes": 2202560,
+    "compressed_weight_mb": 2.10052490234375,
+    "fp32_kept_bytes": 272936,
+    "scale_metadata_bytes": 68476,
+    "num_weight_scales": 17066,
+    "num_activation_scales": 53,
+    "compressed_total_bytes": 2543972,
+    "compressed_total_mb": 2.4261207580566406,
+    "weight_compression_ratio": 3.5704701152371174,
+    "weight_only_compression_ratio": 4.0
+  },
+  "activation_memory": {
+    "batch_size": 1,
+    "activation_elements": 1623808,
+    "activation_fp32_bytes": 6495232,
+    "activation_fp32_mb": 6.1943359375,
+    "activation_quant_bytes": 1623808,
+    "activation_quant_mb": 1.548583984375,
+    "peak_layer_activation_elements": 147456,
+    "peak_layer_activation_quant_bytes": 147456,
+    "activation_compression_ratio": 4.0
+  }
+}

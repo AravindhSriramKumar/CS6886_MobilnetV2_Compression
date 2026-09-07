@@ -1,0 +1,1014 @@
+{
+  "config": {
+    "checkpoint": "runs/baseline/best.pt",
+    "checkpoint_epoch": 176,
+    "weight_bits": 2,
+    "activation_bits": 8,
+    "quantization": "symmetric uniform, zero-point=0",
+    "weight_granularity": "per-output-channel",
+    "activation_granularity": "per-tensor (per-layer input)",
+    "fp32_kept": "BatchNorm params/stats, biases, final logits",
+    "calibration_images": 512,
+    "num_quantized_layers": 53
+  },
+  "accuracy": {
+    "fp32_top1": null,
+    "quantized_top1": 0.127,
+    "quantized_loss": 2.689061755371094,
+    "top1_drop": null,
+    "per_class_top1": [
+      0.0,
+      0.0,
+      0.0,
+      0.4009999930858612,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.8690000176429749
+    ]
+  },
+  "weight_memory": {
+    "total_param_elements": 2270794,
+    "quantized_weight_elements": 2202560,
+    "fp32_other_elements": 68234,
+    "fp32_model_size_bytes": 9083176,
+    "fp32_model_size_mb": 8.662391662597656,
+    "compressed_weight_bytes": 550640,
+    "compressed_weight_mb": 0.5251312255859375,
+    "fp32_kept_bytes": 272936,
+    "scale_metadata_bytes": 68476,
+    "num_weight_scales": 17066,
+    "num_activation_scales": 53,
+    "compressed_total_bytes": 892052,
+    "compressed_total_mb": 0.8507270812988281,
+    "weight_compression_ratio": 10.182339146148431,
+    "weight_only_compression_ratio": 16.0
+  },
+  "activation_memory": {
+    "batch_size": 1,
+    "activation_elements": 1623808,
+    "activation_fp32_bytes": 6495232,
+    "activation_fp32_mb": 6.1943359375,
+    "activation_quant_bytes": 1623808,
+    "activation_quant_mb": 1.548583984375,
+    "peak_layer_activation_elements": 147456,
+    "peak_layer_activation_quant_bytes": 147456,
+    "activation_compression_ratio": 4.0
+  },
+  "per_layer": [
+    {
+      "layer": "features.0.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        32,
+        3,
+        3,
+        3
+      ],
+      "weight_elements": 864,
+      "weight_fp32_bytes": 3456,
+      "weight_quant_bytes": 216,
+      "num_output_channel_scales": 32,
+      "act_in_elements_per_sample": 3072,
+      "act_quant_bytes_per_sample": 3072,
+      "act_calib_absmax": 2.12648868560791,
+      "act_scale": 0.01674400456249714
+    },
+    {
+      "layer": "features.1.conv.0.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        32,
+        1,
+        3,
+        3
+      ],
+      "weight_elements": 288,
+      "weight_fp32_bytes": 1152,
+      "weight_quant_bytes": 72,
+      "num_output_channel_scales": 32,
+      "act_in_elements_per_sample": 32768,
+      "act_quant_bytes_per_sample": 32768,
+      "act_calib_absmax": 2.6745107173919678,
+      "act_scale": 0.02105913870036602
+    },
+    {
+      "layer": "features.1.conv.1",
+      "type": "Conv2d",
+      "weight_shape": [
+        16,
+        32,
+        1,
+        1
+      ],
+      "weight_elements": 512,
+      "weight_fp32_bytes": 2048,
+      "weight_quant_bytes": 128,
+      "num_output_channel_scales": 16,
+      "act_in_elements_per_sample": 32768,
+      "act_quant_bytes_per_sample": 32768,
+      "act_calib_absmax": 3.2233710289001465,
+      "act_scale": 0.025380874052643776
+    },
+    {
+      "layer": "features.2.conv.0.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        96,
+        16,
+        1,
+        1
+      ],
+      "weight_elements": 1536,
+      "weight_fp32_bytes": 6144,
+      "weight_quant_bytes": 384,
+      "num_output_channel_scales": 96,
+      "act_in_elements_per_sample": 16384,
+      "act_quant_bytes_per_sample": 16384,
+      "act_calib_absmax": 2.877207040786743,
+      "act_scale": 0.022655174136161804
+    },
+    {
+      "layer": "features.2.conv.1.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        96,
+        1,
+        3,
+        3
+      ],
+      "weight_elements": 864,
+      "weight_fp32_bytes": 3456,
+      "weight_quant_bytes": 216,
+      "num_output_channel_scales": 96,
+      "act_in_elements_per_sample": 98304,
+      "act_quant_bytes_per_sample": 98304,
+      "act_calib_absmax": 1.8987281322479248,
+      "act_scale": 0.014950615353882313
+    },
+    {
+      "layer": "features.2.conv.2",
+      "type": "Conv2d",
+      "weight_shape": [
+        24,
+        96,
+        1,
+        1
+      ],
+      "weight_elements": 2304,
+      "weight_fp32_bytes": 9216,
+      "weight_quant_bytes": 576,
+      "num_output_channel_scales": 24,
+      "act_in_elements_per_sample": 98304,
+      "act_quant_bytes_per_sample": 98304,
+      "act_calib_absmax": 3.172184705734253,
+      "act_scale": 0.024977833032608032
+    },
+    {
+      "layer": "features.3.conv.0.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        144,
+        24,
+        1,
+        1
+      ],
+      "weight_elements": 3456,
+      "weight_fp32_bytes": 13824,
+      "weight_quant_bytes": 864,
+      "num_output_channel_scales": 144,
+      "act_in_elements_per_sample": 24576,
+      "act_quant_bytes_per_sample": 24576,
+      "act_calib_absmax": 2.4582128524780273,
+      "act_scale": 0.019356006756424904
+    },
+    {
+      "layer": "features.3.conv.1.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        144,
+        1,
+        3,
+        3
+      ],
+      "weight_elements": 1296,
+      "weight_fp32_bytes": 5184,
+      "weight_quant_bytes": 324,
+      "num_output_channel_scales": 144,
+      "act_in_elements_per_sample": 147456,
+      "act_quant_bytes_per_sample": 147456,
+      "act_calib_absmax": 0.9220113754272461,
+      "act_scale": 0.00725993188098073
+    },
+    {
+      "layer": "features.3.conv.2",
+      "type": "Conv2d",
+      "weight_shape": [
+        24,
+        144,
+        1,
+        1
+      ],
+      "weight_elements": 3456,
+      "weight_fp32_bytes": 13824,
+      "weight_quant_bytes": 864,
+      "num_output_channel_scales": 24,
+      "act_in_elements_per_sample": 147456,
+      "act_quant_bytes_per_sample": 147456,
+      "act_calib_absmax": 1.3288480043411255,
+      "act_scale": 0.010463370010256767
+    },
+    {
+      "layer": "features.4.conv.0.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        144,
+        24,
+        1,
+        1
+      ],
+      "weight_elements": 3456,
+      "weight_fp32_bytes": 13824,
+      "weight_quant_bytes": 864,
+      "num_output_channel_scales": 144,
+      "act_in_elements_per_sample": 24576,
+      "act_quant_bytes_per_sample": 24576,
+      "act_calib_absmax": 2.940863847732544,
+      "act_scale": 0.023156408220529556
+    },
+    {
+      "layer": "features.4.conv.1.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        144,
+        1,
+        3,
+        3
+      ],
+      "weight_elements": 1296,
+      "weight_fp32_bytes": 5184,
+      "weight_quant_bytes": 324,
+      "num_output_channel_scales": 144,
+      "act_in_elements_per_sample": 147456,
+      "act_quant_bytes_per_sample": 147456,
+      "act_calib_absmax": 1.849074125289917,
+      "act_scale": 0.014559638686478138
+    },
+    {
+      "layer": "features.4.conv.2",
+      "type": "Conv2d",
+      "weight_shape": [
+        32,
+        144,
+        1,
+        1
+      ],
+      "weight_elements": 4608,
+      "weight_fp32_bytes": 18432,
+      "weight_quant_bytes": 1152,
+      "num_output_channel_scales": 32,
+      "act_in_elements_per_sample": 36864,
+      "act_quant_bytes_per_sample": 36864,
+      "act_calib_absmax": 3.9034886360168457,
+      "act_scale": 0.030736131593585014
+    },
+    {
+      "layer": "features.5.conv.0.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        192,
+        32,
+        1,
+        1
+      ],
+      "weight_elements": 6144,
+      "weight_fp32_bytes": 24576,
+      "weight_quant_bytes": 1536,
+      "num_output_channel_scales": 192,
+      "act_in_elements_per_sample": 8192,
+      "act_quant_bytes_per_sample": 8192,
+      "act_calib_absmax": 2.9834516048431396,
+      "act_scale": 0.023491743952035904
+    },
+    {
+      "layer": "features.5.conv.1.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        192,
+        1,
+        3,
+        3
+      ],
+      "weight_elements": 1728,
+      "weight_fp32_bytes": 6912,
+      "weight_quant_bytes": 432,
+      "num_output_channel_scales": 192,
+      "act_in_elements_per_sample": 49152,
+      "act_quant_bytes_per_sample": 49152,
+      "act_calib_absmax": 0.9392974376678467,
+      "act_scale": 0.007396042812615633
+    },
+    {
+      "layer": "features.5.conv.2",
+      "type": "Conv2d",
+      "weight_shape": [
+        32,
+        192,
+        1,
+        1
+      ],
+      "weight_elements": 6144,
+      "weight_fp32_bytes": 24576,
+      "weight_quant_bytes": 1536,
+      "num_output_channel_scales": 32,
+      "act_in_elements_per_sample": 49152,
+      "act_quant_bytes_per_sample": 49152,
+      "act_calib_absmax": 1.4332275390625,
+      "act_scale": 0.01128525659441948
+    },
+    {
+      "layer": "features.6.conv.0.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        192,
+        32,
+        1,
+        1
+      ],
+      "weight_elements": 6144,
+      "weight_fp32_bytes": 24576,
+      "weight_quant_bytes": 1536,
+      "num_output_channel_scales": 192,
+      "act_in_elements_per_sample": 8192,
+      "act_quant_bytes_per_sample": 8192,
+      "act_calib_absmax": 2.881312370300293,
+      "act_scale": 0.022687498480081558
+    },
+    {
+      "layer": "features.6.conv.1.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        192,
+        1,
+        3,
+        3
+      ],
+      "weight_elements": 1728,
+      "weight_fp32_bytes": 6912,
+      "weight_quant_bytes": 432,
+      "num_output_channel_scales": 192,
+      "act_in_elements_per_sample": 49152,
+      "act_quant_bytes_per_sample": 49152,
+      "act_calib_absmax": 0.9993277192115784,
+      "act_scale": 0.007868722081184387
+    },
+    {
+      "layer": "features.6.conv.2",
+      "type": "Conv2d",
+      "weight_shape": [
+        32,
+        192,
+        1,
+        1
+      ],
+      "weight_elements": 6144,
+      "weight_fp32_bytes": 24576,
+      "weight_quant_bytes": 1536,
+      "num_output_channel_scales": 32,
+      "act_in_elements_per_sample": 49152,
+      "act_quant_bytes_per_sample": 49152,
+      "act_calib_absmax": 1.4957255125045776,
+      "act_scale": 0.011777366511523724
+    },
+    {
+      "layer": "features.7.conv.0.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        192,
+        32,
+        1,
+        1
+      ],
+      "weight_elements": 6144,
+      "weight_fp32_bytes": 24576,
+      "weight_quant_bytes": 1536,
+      "num_output_channel_scales": 192,
+      "act_in_elements_per_sample": 8192,
+      "act_quant_bytes_per_sample": 8192,
+      "act_calib_absmax": 3.2188143730163574,
+      "act_scale": 0.02534499578177929
+    },
+    {
+      "layer": "features.7.conv.1.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        192,
+        1,
+        3,
+        3
+      ],
+      "weight_elements": 1728,
+      "weight_fp32_bytes": 6912,
+      "weight_quant_bytes": 432,
+      "num_output_channel_scales": 192,
+      "act_in_elements_per_sample": 49152,
+      "act_quant_bytes_per_sample": 49152,
+      "act_calib_absmax": 2.1296231746673584,
+      "act_scale": 0.0167686864733696
+    },
+    {
+      "layer": "features.7.conv.2",
+      "type": "Conv2d",
+      "weight_shape": [
+        64,
+        192,
+        1,
+        1
+      ],
+      "weight_elements": 12288,
+      "weight_fp32_bytes": 49152,
+      "weight_quant_bytes": 3072,
+      "num_output_channel_scales": 64,
+      "act_in_elements_per_sample": 12288,
+      "act_quant_bytes_per_sample": 12288,
+      "act_calib_absmax": 3.461308002471924,
+      "act_scale": 0.027254393324255943
+    },
+    {
+      "layer": "features.8.conv.0.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        384,
+        64,
+        1,
+        1
+      ],
+      "weight_elements": 24576,
+      "weight_fp32_bytes": 98304,
+      "weight_quant_bytes": 6144,
+      "num_output_channel_scales": 384,
+      "act_in_elements_per_sample": 4096,
+      "act_quant_bytes_per_sample": 4096,
+      "act_calib_absmax": 2.6157803535461426,
+      "act_scale": 0.020596696063876152
+    },
+    {
+      "layer": "features.8.conv.1.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        384,
+        1,
+        3,
+        3
+      ],
+      "weight_elements": 3456,
+      "weight_fp32_bytes": 13824,
+      "weight_quant_bytes": 864,
+      "num_output_channel_scales": 384,
+      "act_in_elements_per_sample": 24576,
+      "act_quant_bytes_per_sample": 24576,
+      "act_calib_absmax": 0.9043264389038086,
+      "act_scale": 0.007120680529624224
+    },
+    {
+      "layer": "features.8.conv.2",
+      "type": "Conv2d",
+      "weight_shape": [
+        64,
+        384,
+        1,
+        1
+      ],
+      "weight_elements": 24576,
+      "weight_fp32_bytes": 98304,
+      "weight_quant_bytes": 6144,
+      "num_output_channel_scales": 64,
+      "act_in_elements_per_sample": 24576,
+      "act_quant_bytes_per_sample": 24576,
+      "act_calib_absmax": 1.1014991998672485,
+      "act_scale": 0.008673221804201603
+    },
+    {
+      "layer": "features.9.conv.0.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        384,
+        64,
+        1,
+        1
+      ],
+      "weight_elements": 24576,
+      "weight_fp32_bytes": 98304,
+      "weight_quant_bytes": 6144,
+      "num_output_channel_scales": 384,
+      "act_in_elements_per_sample": 4096,
+      "act_quant_bytes_per_sample": 4096,
+      "act_calib_absmax": 2.54756760597229,
+      "act_scale": 0.02005958743393421
+    },
+    {
+      "layer": "features.9.conv.1.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        384,
+        1,
+        3,
+        3
+      ],
+      "weight_elements": 3456,
+      "weight_fp32_bytes": 13824,
+      "weight_quant_bytes": 864,
+      "num_output_channel_scales": 384,
+      "act_in_elements_per_sample": 24576,
+      "act_quant_bytes_per_sample": 24576,
+      "act_calib_absmax": 0.8679033517837524,
+      "act_scale": 0.0068338848650455475
+    },
+    {
+      "layer": "features.9.conv.2",
+      "type": "Conv2d",
+      "weight_shape": [
+        64,
+        384,
+        1,
+        1
+      ],
+      "weight_elements": 24576,
+      "weight_fp32_bytes": 98304,
+      "weight_quant_bytes": 6144,
+      "num_output_channel_scales": 64,
+      "act_in_elements_per_sample": 24576,
+      "act_quant_bytes_per_sample": 24576,
+      "act_calib_absmax": 1.546124815940857,
+      "act_scale": 0.01217421144247055
+    },
+    {
+      "layer": "features.10.conv.0.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        384,
+        64,
+        1,
+        1
+      ],
+      "weight_elements": 24576,
+      "weight_fp32_bytes": 98304,
+      "weight_quant_bytes": 6144,
+      "num_output_channel_scales": 384,
+      "act_in_elements_per_sample": 4096,
+      "act_quant_bytes_per_sample": 4096,
+      "act_calib_absmax": 2.5346109867095947,
+      "act_scale": 0.019957566633820534
+    },
+    {
+      "layer": "features.10.conv.1.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        384,
+        1,
+        3,
+        3
+      ],
+      "weight_elements": 3456,
+      "weight_fp32_bytes": 13824,
+      "weight_quant_bytes": 864,
+      "num_output_channel_scales": 384,
+      "act_in_elements_per_sample": 24576,
+      "act_quant_bytes_per_sample": 24576,
+      "act_calib_absmax": 0.7199198603630066,
+      "act_scale": 0.005668660160154104
+    },
+    {
+      "layer": "features.10.conv.2",
+      "type": "Conv2d",
+      "weight_shape": [
+        64,
+        384,
+        1,
+        1
+      ],
+      "weight_elements": 24576,
+      "weight_fp32_bytes": 98304,
+      "weight_quant_bytes": 6144,
+      "num_output_channel_scales": 64,
+      "act_in_elements_per_sample": 24576,
+      "act_quant_bytes_per_sample": 24576,
+      "act_calib_absmax": 1.2661137580871582,
+      "act_scale": 0.009969399310648441
+    },
+    {
+      "layer": "features.11.conv.0.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        384,
+        64,
+        1,
+        1
+      ],
+      "weight_elements": 24576,
+      "weight_fp32_bytes": 98304,
+      "weight_quant_bytes": 6144,
+      "num_output_channel_scales": 384,
+      "act_in_elements_per_sample": 4096,
+      "act_quant_bytes_per_sample": 4096,
+      "act_calib_absmax": 2.9367012977600098,
+      "act_scale": 0.02312363125383854
+    },
+    {
+      "layer": "features.11.conv.1.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        384,
+        1,
+        3,
+        3
+      ],
+      "weight_elements": 3456,
+      "weight_fp32_bytes": 13824,
+      "weight_quant_bytes": 864,
+      "num_output_channel_scales": 384,
+      "act_in_elements_per_sample": 24576,
+      "act_quant_bytes_per_sample": 24576,
+      "act_calib_absmax": 1.7503575086593628,
+      "act_scale": 0.01378234289586544
+    },
+    {
+      "layer": "features.11.conv.2",
+      "type": "Conv2d",
+      "weight_shape": [
+        96,
+        384,
+        1,
+        1
+      ],
+      "weight_elements": 36864,
+      "weight_fp32_bytes": 147456,
+      "weight_quant_bytes": 9216,
+      "num_output_channel_scales": 96,
+      "act_in_elements_per_sample": 24576,
+      "act_quant_bytes_per_sample": 24576,
+      "act_calib_absmax": 4.307308197021484,
+      "act_scale": 0.03391581401228905
+    },
+    {
+      "layer": "features.12.conv.0.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        576,
+        96,
+        1,
+        1
+      ],
+      "weight_elements": 55296,
+      "weight_fp32_bytes": 221184,
+      "weight_quant_bytes": 13824,
+      "num_output_channel_scales": 576,
+      "act_in_elements_per_sample": 6144,
+      "act_quant_bytes_per_sample": 6144,
+      "act_calib_absmax": 1.8810523748397827,
+      "act_scale": 0.014811435714364052
+    },
+    {
+      "layer": "features.12.conv.1.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        576,
+        1,
+        3,
+        3
+      ],
+      "weight_elements": 5184,
+      "weight_fp32_bytes": 20736,
+      "weight_quant_bytes": 1296,
+      "num_output_channel_scales": 576,
+      "act_in_elements_per_sample": 36864,
+      "act_quant_bytes_per_sample": 36864,
+      "act_calib_absmax": 1.2789828777313232,
+      "act_scale": 0.010070730932056904
+    },
+    {
+      "layer": "features.12.conv.2",
+      "type": "Conv2d",
+      "weight_shape": [
+        96,
+        576,
+        1,
+        1
+      ],
+      "weight_elements": 55296,
+      "weight_fp32_bytes": 221184,
+      "weight_quant_bytes": 13824,
+      "num_output_channel_scales": 96,
+      "act_in_elements_per_sample": 36864,
+      "act_quant_bytes_per_sample": 36864,
+      "act_calib_absmax": 1.9676440954208374,
+      "act_scale": 0.015493260696530342
+    },
+    {
+      "layer": "features.13.conv.0.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        576,
+        96,
+        1,
+        1
+      ],
+      "weight_elements": 55296,
+      "weight_fp32_bytes": 221184,
+      "weight_quant_bytes": 13824,
+      "num_output_channel_scales": 576,
+      "act_in_elements_per_sample": 6144,
+      "act_quant_bytes_per_sample": 6144,
+      "act_calib_absmax": 1.9304898977279663,
+      "act_scale": 0.01520070806145668
+    },
+    {
+      "layer": "features.13.conv.1.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        576,
+        1,
+        3,
+        3
+      ],
+      "weight_elements": 5184,
+      "weight_fp32_bytes": 20736,
+      "weight_quant_bytes": 1296,
+      "num_output_channel_scales": 576,
+      "act_in_elements_per_sample": 36864,
+      "act_quant_bytes_per_sample": 36864,
+      "act_calib_absmax": 1.159837245941162,
+      "act_scale": 0.00913257710635662
+    },
+    {
+      "layer": "features.13.conv.2",
+      "type": "Conv2d",
+      "weight_shape": [
+        96,
+        576,
+        1,
+        1
+      ],
+      "weight_elements": 55296,
+      "weight_fp32_bytes": 221184,
+      "weight_quant_bytes": 13824,
+      "num_output_channel_scales": 96,
+      "act_in_elements_per_sample": 36864,
+      "act_quant_bytes_per_sample": 36864,
+      "act_calib_absmax": 1.7682620286941528,
+      "act_scale": 0.013923322781920433
+    },
+    {
+      "layer": "features.14.conv.0.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        576,
+        96,
+        1,
+        1
+      ],
+      "weight_elements": 55296,
+      "weight_fp32_bytes": 221184,
+      "weight_quant_bytes": 13824,
+      "num_output_channel_scales": 576,
+      "act_in_elements_per_sample": 6144,
+      "act_quant_bytes_per_sample": 6144,
+      "act_calib_absmax": 2.0500855445861816,
+      "act_scale": 0.016142405569553375
+    },
+    {
+      "layer": "features.14.conv.1.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        576,
+        1,
+        3,
+        3
+      ],
+      "weight_elements": 5184,
+      "weight_fp32_bytes": 20736,
+      "weight_quant_bytes": 1296,
+      "num_output_channel_scales": 576,
+      "act_in_elements_per_sample": 36864,
+      "act_quant_bytes_per_sample": 36864,
+      "act_calib_absmax": 1.9698246717453003,
+      "act_scale": 0.015510430559515953
+    },
+    {
+      "layer": "features.14.conv.2",
+      "type": "Conv2d",
+      "weight_shape": [
+        160,
+        576,
+        1,
+        1
+      ],
+      "weight_elements": 92160,
+      "weight_fp32_bytes": 368640,
+      "weight_quant_bytes": 23040,
+      "num_output_channel_scales": 160,
+      "act_in_elements_per_sample": 9216,
+      "act_quant_bytes_per_sample": 9216,
+      "act_calib_absmax": 2.7952167987823486,
+      "act_scale": 0.022009581327438354
+    },
+    {
+      "layer": "features.15.conv.0.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        960,
+        160,
+        1,
+        1
+      ],
+      "weight_elements": 153600,
+      "weight_fp32_bytes": 614400,
+      "weight_quant_bytes": 38400,
+      "num_output_channel_scales": 960,
+      "act_in_elements_per_sample": 2560,
+      "act_quant_bytes_per_sample": 2560,
+      "act_calib_absmax": 0.899317741394043,
+      "act_scale": 0.007081241812556982
+    },
+    {
+      "layer": "features.15.conv.1.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        960,
+        1,
+        3,
+        3
+      ],
+      "weight_elements": 8640,
+      "weight_fp32_bytes": 34560,
+      "weight_quant_bytes": 2160,
+      "num_output_channel_scales": 960,
+      "act_in_elements_per_sample": 15360,
+      "act_quant_bytes_per_sample": 15360,
+      "act_calib_absmax": 0.9591711163520813,
+      "act_scale": 0.007552528288215399
+    },
+    {
+      "layer": "features.15.conv.2",
+      "type": "Conv2d",
+      "weight_shape": [
+        160,
+        960,
+        1,
+        1
+      ],
+      "weight_elements": 153600,
+      "weight_fp32_bytes": 614400,
+      "weight_quant_bytes": 38400,
+      "num_output_channel_scales": 160,
+      "act_in_elements_per_sample": 15360,
+      "act_quant_bytes_per_sample": 15360,
+      "act_calib_absmax": 1.159878134727478,
+      "act_scale": 0.009132898412644863
+    },
+    {
+      "layer": "features.16.conv.0.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        960,
+        160,
+        1,
+        1
+      ],
+      "weight_elements": 153600,
+      "weight_fp32_bytes": 614400,
+      "weight_quant_bytes": 38400,
+      "num_output_channel_scales": 960,
+      "act_in_elements_per_sample": 2560,
+      "act_quant_bytes_per_sample": 2560,
+      "act_calib_absmax": 1.0531630516052246,
+      "act_scale": 0.008292622864246368
+    },
+    {
+      "layer": "features.16.conv.1.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        960,
+        1,
+        3,
+        3
+      ],
+      "weight_elements": 8640,
+      "weight_fp32_bytes": 34560,
+      "weight_quant_bytes": 2160,
+      "num_output_channel_scales": 960,
+      "act_in_elements_per_sample": 15360,
+      "act_quant_bytes_per_sample": 15360,
+      "act_calib_absmax": 0.903528094291687,
+      "act_scale": 0.0071143945679068565
+    },
+    {
+      "layer": "features.16.conv.2",
+      "type": "Conv2d",
+      "weight_shape": [
+        160,
+        960,
+        1,
+        1
+      ],
+      "weight_elements": 153600,
+      "weight_fp32_bytes": 614400,
+      "weight_quant_bytes": 38400,
+      "num_output_channel_scales": 160,
+      "act_in_elements_per_sample": 15360,
+      "act_quant_bytes_per_sample": 15360,
+      "act_calib_absmax": 1.8647493124008179,
+      "act_scale": 0.014683065004646778
+    },
+    {
+      "layer": "features.17.conv.0.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        960,
+        160,
+        1,
+        1
+      ],
+      "weight_elements": 153600,
+      "weight_fp32_bytes": 614400,
+      "weight_quant_bytes": 38400,
+      "num_output_channel_scales": 960,
+      "act_in_elements_per_sample": 2560,
+      "act_quant_bytes_per_sample": 2560,
+      "act_calib_absmax": 1.789711594581604,
+      "act_scale": 0.014092217199504375
+    },
+    {
+      "layer": "features.17.conv.1.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        960,
+        1,
+        3,
+        3
+      ],
+      "weight_elements": 8640,
+      "weight_fp32_bytes": 34560,
+      "weight_quant_bytes": 2160,
+      "num_output_channel_scales": 960,
+      "act_in_elements_per_sample": 15360,
+      "act_quant_bytes_per_sample": 15360,
+      "act_calib_absmax": 1.0177559852600098,
+      "act_scale": 0.008013826794922352
+    },
+    {
+      "layer": "features.17.conv.2",
+      "type": "Conv2d",
+      "weight_shape": [
+        320,
+        960,
+        1,
+        1
+      ],
+      "weight_elements": 307200,
+      "weight_fp32_bytes": 1228800,
+      "weight_quant_bytes": 76800,
+      "num_output_channel_scales": 320,
+      "act_in_elements_per_sample": 15360,
+      "act_quant_bytes_per_sample": 15360,
+      "act_calib_absmax": 0.7827615141868591,
+      "act_scale": 0.006163476500660181
+    },
+    {
+      "layer": "features.18.0",
+      "type": "Conv2d",
+      "weight_shape": [
+        1280,
+        320,
+        1,
+        1
+      ],
+      "weight_elements": 409600,
+      "weight_fp32_bytes": 1638400,
+      "weight_quant_bytes": 102400,
+      "num_output_channel_scales": 1280,
+      "act_in_elements_per_sample": 5120,
+      "act_quant_bytes_per_sample": 5120,
+      "act_calib_absmax": 0.8685484528541565,
+      "act_scale": 0.0068389642983675
+    },
+    {
+      "layer": "classifier.1",
+      "type": "Linear",
+      "weight_shape": [
+        10,
+        1280
+      ],
+      "weight_elements": 12800,
+      "weight_fp32_bytes": 51200,
+      "weight_quant_bytes": 3200,
+      "num_output_channel_scales": 10,
+      "act_in_elements_per_sample": 1280,
+      "act_quant_bytes_per_sample": 1280,
+      "act_calib_absmax": 0.46935319900512695,
+      "act_scale": 0.0036956944968551397
+    }
+  ]
+}

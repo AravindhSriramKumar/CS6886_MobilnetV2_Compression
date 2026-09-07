@@ -124,10 +124,6 @@ batches, batch size, workers, device, output paths).
 ## 5. Written answers
 
 - Full write-up: [`docs/answers_all.md`](docs/answers_all.md)
-- Q1: [`docs/Q1_answers.md`](docs/Q1_answers.md) · Q4: [`docs/Q4_answers.md`](docs/Q4_answers.md)
-- Code map: [`docs/REPO_STRUCTURE.md`](docs/REPO_STRUCTURE.md)
-- Compiled report: [`report/main.pdf`](report/main.pdf) (source: `report/main.tex`)
-
 The remainder of this README is the technical write-up, question by question.
 
 ---

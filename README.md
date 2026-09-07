@@ -1,5 +1,5 @@
 # CS6886 — Systems for Deep Learning · Assignment 2
-### MobileNet-v2 on CIFAR-10 + hand-written quantization (weights & activations) + HAWQ-V2 mixed precision
+### MobileNet-v2 on CIFAR-10 
 
 Train MobileNet-v2 from scratch on CIFAR-10, then compress it with a quantization
 scheme written from scratch (no `torch.ao`, `torch.quantization`, bitsandbytes, GPTQ

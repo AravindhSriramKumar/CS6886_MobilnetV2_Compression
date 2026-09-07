@@ -74,7 +74,6 @@ or push offline runs later with `wandb sync wandb/offline-run-*`.
 │   ├── compression/*.json        # Q2 uniform W/A results
 │   └── mixed_precision/          # Q3 sweep: results.{json,csv}, sensitivity.json
 ├── docs/                         # written answers (Q1–Q4)
-├── report/                       # LaTeX report, figures, tables, make_figures.py
 ├── requirements.txt
 └── README.md
 ```

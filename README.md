@@ -6,9 +6,7 @@ scheme written from scratch (no `torch.ao`, `torch.quantization`, bitsandbytes, 
 or AWQ), and report weight/activation compression ratios, accuracy and final model
 size.
 
-**Headline result:** 93.18% FP32 top-1 → **92.28% top-1 at 1.395 MB**
-(from 8.662 MB): **7.86× weight**, **4.00× activation**, **6.21× whole-model**
-compression, for a **0.90 pt accuracy drop** (config `hawq_w8-4_top25_a8`).
+**Headline:** **92.28% top-1 at 1.395 MB**, down from 93.18% FP32 (8.662 MB), achieving **7.86× weight and 6.21× overall compression** with a **0.90 pt drop** (`hawq_w8-4_top25_a8`).
 ---
 
 ## 1. Requirements

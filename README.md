@@ -28,8 +28,8 @@ Pinned dependencies live in [`requirements.txt`](requirements.txt):
 ## 2. Setup
 
 ```bash
-git clone https://github.com/<your-username>/CS6886-Sys_for_dl-Assignment2.git
-cd CS6886-Sys_for_dl-Assignment2
+git clone https://github.com/AravindhSriramKumar/CS6886_MobilnetV2_Compression.git
+cd CS6886_MobilnetV2_Compression
 
 conda create -n cs6886a2 python=3.10 -y
 conda activate cs6886a2
